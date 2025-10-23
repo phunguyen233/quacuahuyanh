@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quà tặng cho người xinh đẹp 💕</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #ffe6eb; /* hồng nhạt */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: all 1s ease;
+    }
+
+    button {
+      background-color: #ffb6c1;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff9aae;
+      transform: scale(1.05);
+    }
+
+    .page {
+      margin: 50px;
+      padding: 20px;
+      display: none;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    .active {
+      display: block;
+    }
+
+    img {
+      max-width: 300px;
+      margin: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .heart {
+      font-size: 80px;
+      color: #ff4d6d;
+      animation: beat 1s infinite;
+    }
+
+    
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Trang 1 -->
+  <div class="page active" id="page1">
+    <h1 style="margin: 50px; color: #ff4d6d;">To you — the one who makes every single day worth remembering.💕</h1>
+    <button onclick="nextPage(2)">Bấm để mở 💌</button>
+  </div>
+
+  <!-- Trang 2 -->
+  <div class="page" id="page2">
+    <img src="imgs/1.png" alt="Ảnh trang 2" >
+    <h2 style="color: #ff4d6d; margin: 20px; " >💖 I may not know everything about you yet, but I’d love to.
+            Every story, every smile, every little detail that makes you who you are — I want to learn them slowly, through time, through us.
+
+            This gift may look simple, but it carries a piece of both you and me.
+            I designed and crafted it by hand — inspired by the collectible toy cards called Hot Wheels, something that truly reflects my personality and passion.
+            But this one is different — because it’s no longer just about me.
+
+            With your image and your presence, it became something unique, something alive — a handmade blister card that exists only once in this world.
+            It’s more than a creation; it’s a symbol of how two worlds can blend into one.
+
+            So here it is — the only one of its kind.
+            A piece of art, a piece of me, dedicated entirely to you.
+            I hope it makes you smile every time you see it, because to me, you already are something one of a kind. 💖
+    </h2>
+
+    <button onclick="nextPage(3)">Tiếp theo ➜</button>
+  </div>
+
+  <!-- Trang 3 -->
+  <div class="page" id="page3">
+    <div>
+      <img src="imgs/3.png" alt="Ảnh 1 ">
+      <div class="heart">💗</div>
+      <img src="imgs/2.png" alt="Ảnh 2 ">
+    </div>
+
+  </div>
+
+  <script>
+    function nextPage(pageNumber) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + pageNumber).classList.add('active');
+    }
+  </script>
+</body>
+</html>
