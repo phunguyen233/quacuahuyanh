@@ -13,14 +13,15 @@
     }
 
     body {
-      background-color: #ffe6eb; /* hồng nhạt */
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      transition: all 1s ease;
-    }
+    background-color: #ffe6eb;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 1s ease;
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung cao hơn màn hình */
+   }
 
     button {
       background-color: #ffb6c1;
@@ -32,6 +33,7 @@
       cursor: pointer;
       box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
       transition: 0.3s;
+      overflow-y: auto; 
     }
 
     button:hover {
@@ -40,22 +42,27 @@
     }
 
     .page {
-      margin: 50px;
-      padding: 20px;
-      display: none;
-      text-align: center;
-      animation: fadeIn 1s ease;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: none;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    overflow-y: auto; /* Trang có thể cuộn nếu ảnh dài */
     }
 
     .active {
       display: block;
     }
 
-    img {
-      max-width: 300px;
-      margin: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    .page img {
+    width: 90vw; /* Ảnh co theo chiều ngang điện thoại */
+    height: auto; /* Tự co theo tỷ lệ */
+    max-height: 90vh; /* Không vượt quá chiều cao màn hình */
+    object-fit: contain; /* Giữ nguyên tỉ lệ, không bị cắt */
+    border-radius: 20px;
+    margin: 10px auto;
+    display: block;
     }
 
     .heart {
@@ -86,7 +93,7 @@
 
   <!-- Trang 2 -->
   <div class="page" id="page2">
-    <img src="1.png" alt="Ảnh trang 2" >
+    <img src="1.png" alt="Ảnh trang 2" class="image-container" >
     <h2 style="color: #ff4d6d; margin: 20px; " >💖 I may not know everything about you yet, but I’d love to.
             Every story, every smile, every little detail that makes you who you are — I want to learn them slowly, through time, through us.
 
